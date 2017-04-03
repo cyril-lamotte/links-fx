@@ -1,0 +1,54 @@
+// Cool underline links FX
+//
+// @param {Color} $color - Underline color
+//
+// a {
+//   @include rocket(#000);
+// }
+@mixin rocket($color: #fff, $type: 'center') {
+  position: relative;
+  text-decoration: none;
+
+  @if $type == 'ltr' {
+    overflow: hidden;
+    display: inline-block;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    background: $color;
+    transition: transform 300ms;
+
+    @if $type == 'center' {
+      left: 0;
+      right: 0;
+      transform: scaleX(0);
+    }
+
+    @if $type == 'ltr' {
+      left: 0;
+      right: 0;
+      transform: translateX(-101%);
+    }
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+
+    &:before {
+
+      @if $type == 'center' {
+        transform: scaleX(1);
+      }
+
+      @if $type == 'ltr' {
+        transform: translateX(0);
+      }
+
+    }
+  }
+}

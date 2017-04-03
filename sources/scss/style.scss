@@ -1,0 +1,90 @@
+@charset 'utf-8';
+
+@import 'rocket';
+@import 'square';
+
+
+/* -----------------------------------------------------------------------------
+   Demo
+----------------------------------------------------------------------------- */
+
+body {
+  font-family: 'Trebuchet MS';
+  text-align: center;
+  background: #333;
+  color: #fff;
+}
+
+section {
+
+  h2 {
+    margin-top: 50px;
+    color: #C6F1DA;
+  }
+
+  a {
+    margin: 0 20px;
+    color: #fff;
+  }
+
+
+}
+
+.rocket-wrap {
+
+  h2 {
+    color: #C6F1DA;
+  }
+
+}
+
+
+.square-wrap {
+
+  h2 {
+    color: #cbd1f1;
+  }
+
+}
+
+/* -----------------------------------------------------------------------------
+   Rocket
+----------------------------------------------------------------------------- */
+
+.rocket {
+  @include rocket(#fff);
+}
+
+.rocket--ltr {
+  @include rocket(#fff, 'ltr');
+}
+
+
+/* -----------------------------------------------------------------------------
+   Square
+----------------------------------------------------------------------------- */
+
+.square {
+  display: inline-block;
+  background: #555;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-transform: uppercase;
+  @include square(#fff, #555);
+}
+
+.square-2 {
+  padding: 2px 5px;
+  @include square(#fff, #555);
+}
+
+.disc {
+  display: inline-block;
+  background: #555;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-transform: uppercase;
+  @include square(#fff, #555, 'disc');
+}
